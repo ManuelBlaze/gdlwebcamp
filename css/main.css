@@ -260,10 +260,15 @@ ul {
     color: white;
     font-size: 2em;
     margin-right: 20px;
+    transition: all .5s ease;
 }
 
 .redes-sociales a:last-of-type {
     margin-right: 0;
+}
+
+.redes-sociales a:hover {
+    color: #fe4918;
 }
 
 .informacion-evento {
@@ -814,6 +819,65 @@ blockquote p::before {
         float: left;
         width: 25%;
     }
+}
+
+
+/*FOOTER SITIO*/
+
+footer.site-footer {
+    background-color: #353535;
+    padding-top: 40px;
+    margin-top: 20px;
+}
+
+footer .contenedor>div {
+    color: #ffffff;
+    padding: 0px 20px;
+    font-size: 12px;
+}
+
+@media (min-width: 768px) {
+    footer .contenedor>div {
+        width: 33.3%;
+        float: left;
+    }
+}
+
+.site-footer h3 {
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+}
+
+.site-footer h3 span {
+    color: #fe4918;
+}
+
+footer .ultimos-tweets li {
+    margin-bottom: 10px;
+}
+
+footer nav.redes-sociales {
+    text-align: left;
+}
+
+footer p.copy,
+footer p.copy a {
+    color: white;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    margin: 20px 0 0 0;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2e2e2e;
+    font-size: 1.05em;
+    font-family: 'PT Sans', sans-serif;
+}
+
+footer p.copy a:hover {
+    color: #fe4918;
+    text-decoration: none;
 }
 
 
