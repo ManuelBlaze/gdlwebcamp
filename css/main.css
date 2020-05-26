@@ -800,6 +800,23 @@ blockquote p::before {
 }
 
 
+/*CUENTA REGRESIVA*/
+
+.cuenta-regresiva ul li {
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .cuenta-regresiva ul li {
+        float: left;
+        width: 25%;
+    }
+}
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
