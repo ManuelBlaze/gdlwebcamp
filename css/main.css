@@ -933,7 +933,7 @@ h4 {
 
 .contenido-dia {
     padding: 20px;
-    /* display: none; */
+    display: none;
 }
 
 .contenido-dia > div p {
@@ -997,7 +997,28 @@ h4 {
     margin: 10px auto;
 }
 
+#lista-productos {
+    background-color: #e1e1e1;
+    padding: 20px;
+    border-radius: 1em;
+    display: none;
+}
 
+#suma-total {
+    text-align: center;
+    font-size: 2em;
+    color: #fe4918;
+}
+
+.error {
+    clear: both;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 1em;
+    background-color: #f8f8f894;
+    display: none;
+}
 /* ==========================================================================
     Helper classes
    ========================================================================== */
