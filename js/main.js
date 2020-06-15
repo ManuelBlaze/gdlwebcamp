@@ -132,6 +132,8 @@
 })();
 
 $(function () {
+  //Lettering
+  $('.nombre-sitio').lettering();
 
   //Programa Evento
   $('.programa-evento .info-curso:first').show();
