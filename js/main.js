@@ -90,10 +90,10 @@
           listadoProductos.push(boletoCompleto + ' Pase(s) Completos ');
         }
         if (cantidadCamisas >= 1) {
-          listadoProductos.push(cantidadCamisas + ' Camisas ');
+          listadoProductos.push(cantidadCamisas + ' Camisa(s) ');
         }
         if (cantidadEtiquetas >= 1) {
-          listadoProductos.push(cantidadEtiquetas + ' Etiquetas ');
+          listadoProductos.push(cantidadEtiquetas + ' Etiqueta(s) ');
         }
         lista_productos.style.display = "block";
 
@@ -134,6 +134,25 @@
 $(function () {
   //Lettering
   $('.nombre-sitio').lettering();
+
+  //Menu fijo
+  let windowHeight = $(window).height();
+  let barraAltura = $('.barra').innerHeight();
+
+  $(window).scroll(function () {
+    let scroll = $(window).scrollTop();
+    if (scroll > windowHeight) {
+      $('.barra').addClass('fixed');
+      $('body').css({
+        'margin-top': barraAltura + 'px'
+      });
+    } else {
+      $('.barra').removeClass('fixed');
+      $('body').css({
+        'margin-top': '0px'
+      });
+    }
+  })
 
   //Programa Evento
   $('.programa-evento .info-curso:first').show();

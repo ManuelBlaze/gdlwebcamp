@@ -374,6 +374,14 @@ h1.nombre-sitio {
     padding: 20px 0;
 }
 
+.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
 .logo {
     width: 80%;
     float: left;
