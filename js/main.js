@@ -27,17 +27,19 @@
     let etiquetas = document.getElementById('etiquetas');
     let camisas = document.getElementById('camisa_evento');
 
-    calcular.addEventListener('click', calcularMontos);
 
-    pase_dia.addEventListener('blur', mostrarDias);
-    pase_dosdias.addEventListener('blur', mostrarDias);
-    pase_completo.addEventListener('blur', mostrarDias);
+    if (document.getElementById('calcular')) {
+      calcular.addEventListener('click', calcularMontos);
 
-    nombre.addEventListener('blur', validarCampos);
-    apellido.addEventListener('blur', validarCampos);
-    email.addEventListener('blur', validarCampos);
-    email.addEventListener('blur', validarEmail);
+      pase_dia.addEventListener('blur', mostrarDias);
+      pase_dosdias.addEventListener('blur', mostrarDias);
+      pase_completo.addEventListener('blur', mostrarDias);
 
+      nombre.addEventListener('blur', validarCampos);
+      apellido.addEventListener('blur', validarCampos);
+      email.addEventListener('blur', validarCampos);
+      email.addEventListener('blur', validarEmail);
+    }
 
     function validarCampos() {
       if (this.value == '') {
@@ -138,7 +140,6 @@ $(function () {
   //Menu fijo
   let windowHeight = $(window).height();
   let barraAltura = $('.barra').innerHeight();
-
   $(window).scroll(function () {
     let scroll = $(window).scrollTop();
     if (scroll > windowHeight) {
@@ -153,6 +154,13 @@ $(function () {
       });
     }
   })
+
+  //Menu Responsive
+  $('.menu-movil').on('click', function () {
+    $('.navegacion-principal').slideToggle();
+
+  });
+
 
   //Programa Evento
   $('.programa-evento .info-curso:first').show();

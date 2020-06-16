@@ -402,6 +402,13 @@ h1.nombre-sitio {
 
 .navegacion-principal {
     display: none;
+    width: 100%;
+    margin-top: 5em;
+}
+@media (min-width: 768px) {
+    .navegacion-principal {
+        margin-top: 0;
+    }
 }
 
 .navegacion-principal a {
