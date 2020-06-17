@@ -421,7 +421,7 @@ h1.nombre-sitio {
     width: 100%;
     display: block;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .navegacion-principal a:hover {
@@ -431,6 +431,7 @@ h1.nombre-sitio {
 .navegacion-principal a:last-child {
     border: 2px solid #fe4918;
     color: #fe4918;
+    margin-bottom: 0;
 }
 
 .navegacion-principal a:last-child:hover {
@@ -449,7 +450,7 @@ h1.nombre-sitio {
         width: auto;
         display: inline-block;
         text-align: center;
-        margin-bottom: 20px 10px 0 0;
+        margin-bottom: 0;
     }
     .navegacion-principal a:last-child {
         margin-right: 0;
