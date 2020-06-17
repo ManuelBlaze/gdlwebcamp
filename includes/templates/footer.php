@@ -1,7 +1,7 @@
 <footer class="site-footer">
         <div class="contenedor clearfix">
             <div class="footer-informacion">
-                <h3>Sobre <span>GdlWebCamp</span></h3>
+                <h3>Sobre <span>GloWebCamp</span></h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum temporibus nulla quasi beatae
                     laudantium eaque harum. Dicta provident tempore voluptatibus beatae dolorum ad quas, itaque,
                     inventore quam sit ipsa accusamus.</p>

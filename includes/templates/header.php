@@ -41,7 +41,7 @@
                         <p class="fecha"><i class="fas fa-calendar-alt"></i> 10-12-DIC</p>
                         <p class="ciudad"><i class="fas fa-map-marker-alt"></i> Medellín, CO</p>
                     </div>
-                    <h1 class="nombre-sitio">GdlWebCamp</h1>
+                    <h1 class="nombre-sitio">GloWebCamp</h1>
                     <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
                 </div>
                 <!--Info Evento-->
