@@ -41,7 +41,7 @@
                             <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
                             <p><i class="fas fa-user"></i> Juan Pablo De La Torre</p>
                         </div>
-                        <a href="registro.html" class="button float-rigth">Ver Todos</a>
+                        <a href="registro.php" class="button float-rigth">Ver Todos</a>
                     </div>
                     <!--Talleres-->
                     <div id="conferencias" class="info-curso ocultar clearfix">
@@ -57,7 +57,7 @@
                             <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
                             <p><i class="fas fa-user"></i> Susan Sanchéz</p>
                         </div>
-                        <a href="registro.html" class="button float-rigth">Ver Todos</a>
+                        <a href="registro.php" class="button float-rigth">Ver Todos</a>
                     </div>
                     <!--Conferencias-->
                     <div id="seminarios" class="info-curso ocultar clearfix">
@@ -73,7 +73,7 @@
                             <p><i class="fas fa-calendar-alt"></i> 11 de Dic</p>
                             <p><i class="fas fa-user"></i> Susana Rivera</p>
                         </div>
-                        <a href="registro.html" class="button float-rigth">Ver Todos</a>
+                        <a href="registro.php" class="button float-rigth">Ver Todos</a>
                     </div>
                     <!--Seminarios-->
                 </div>
@@ -166,7 +166,7 @@
                             <li><i class="fas fa-check"></i> Todas las conferencias</li>
                             <li><i class="fas fa-check"></i> Todos los talleres</li>
                         </ul>
-                        <a href="registro.html" class="button hollow">Comprar</a>
+                        <a href="registro.php" class="button hollow">Comprar</a>
                     </div>
                 </li>
 
@@ -179,7 +179,7 @@
                             <li><i class="fas fa-check"></i> Todas las conferencias</li>
                             <li><i class="fas fa-check"></i> Todos los talleres</li>
                         </ul>
-                        <a href="registro.html" class="button">Comprar</a>
+                        <a href="registro.php" class="button">Comprar</a>
                     </div>
                 </li>
 
@@ -192,7 +192,7 @@
                             <li><i class="fas fa-check"></i> Todas las conferencias</li>
                             <li><i class="fas fa-check"></i> Todos los talleres</li>
                         </ul>
-                        <a href="registro.html" class="button hollow">Comprar</a>
+                        <a href="registro.php" class="button hollow">Comprar</a>
                     </div>
                 </li>
             </ul>
