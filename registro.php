@@ -3,7 +3,7 @@
 
     <section class="seccion contenedor">
         <h2>Registro de Usuarios</h2>
-        <form method="POST" action="index.html" id="registro" class="registro">
+        <form method="POST" action="validar_registro.php" id="registro" class="registro">
             <div class="registro caja clearfix" id="datos_usuario">
                 <div class="campo">
                     <label for="Nombe:">Nombre:</label>
@@ -37,7 +37,7 @@
                             </ul>
                             <div class="orden">
                                 <label for="pase_dia">Boletos deseados:</label>
-                                <input type="number" min="0" placeholder="0" id="pase_dia" size="3">
+                                <input type="number" min="0" placeholder="0" id="pase_dia" size="3" name="boletos[]">
                             </div>
                         </div>
                     </li>
@@ -53,7 +53,7 @@
                             </ul>
                             <div class="orden">
                                 <label for="pase_completo">Boletos deseados:</label>
-                                <input type="number" min="0" placeholder="0" id="pase_completo" size="3">
+                                <input type="number" min="0" placeholder="0" id="pase_completo" size="3" name="boletos[]">
                             </div>
                         </div>
                     </li>
@@ -69,7 +69,7 @@
                             </ul>
                             <div class="orden">
                                 <label for="pase_dosdias">Boletos deseados:</label>
-                                <input type="number" min="0" placeholder="0" id="pase_dosdias" size="3">
+                                <input type="number" min="0" placeholder="0" id="pase_dosdias" size="3" name="boletos[]">
                             </div>
                         </div>
                     </li>
@@ -220,22 +220,22 @@
                     <div class="extras">
                         <div class="orden">
                             <label for="camisa_evento">Camisa del evento $10 <small>(promoción 7% dto.)</small></label>
-                            <input type="number" min="0" size="3" placeholder="0" id="camisa_evento">
+                            <input type="number" min="0" size="3" placeholder="0" id="camisa_evento" name="pedido_camisas">
                         </div>
                         <!--orden-->
                         <div class="orden">
                             <label for="etiquetas">Paquete de 10 etiquetas $2 <small>(HTML5, CSS3, JavaScript,
                                     Chrome)</small></label>
-                            <input type="number" min="0" size="3" placeholder="0" id="etiquetas">
+                            <input type="number" min="0" size="3" placeholder="0" id="etiquetas" name="pedido_etiquetas">
                         </div>
                         <!--orden-->
                         <div class="orden">
                             <label for="regalo">Seleccione un regalo</label> <br>
-                            <select id="regalo" required>
+                            <select id="regalo" name="regalo" required>
                                 <option value="">- Seleccione un regalo -</option>
-                                <option value="ETI">Etiquetas</option>
-                                <option value="PUL">Pulsera</option>
-                                <option value="PLU">Plumas</option>
+                                <option value="2">Etiquetas</option>
+                                <option value="1">Pulsera</option>
+                                <option value="3">Plumas</option>
                             </select>
                         </div>
                         <!--orden-->
@@ -251,7 +251,8 @@
                         <div id="suma-total">
 
                         </div>
-                        <input type="submit" value="Pagar" id="btnRegistro" class="button">
+                        <input type="hidden" name="total_pedido" id="total_pedido">
+                        <input type="submit" name="submit" value="Pagar" id="btnRegistro" class="button">
                     </div>
                     <!--pagar-->
                 </div>
