@@ -214,4 +214,10 @@ $(function () {
     inline: true,
     width: "50%"
   });
+
+  //ColorBox-Newsletter
+  $('.boton_newsletter').colorbox({
+    inline: true,
+    width: "50%"
+  });
 });
