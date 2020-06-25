@@ -7,3 +7,19 @@
 .login-card-body {
     border-radius: 5rem;
 }
+
+.editar {
+    color: #ffc107;
+}
+
+.btn-outline-warning:hover .editar {
+    color: white;
+}
+
+.borrar {
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover .borrar{
+    color: white;
+}

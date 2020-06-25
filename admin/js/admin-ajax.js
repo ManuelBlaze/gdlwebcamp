@@ -19,7 +19,7 @@ $(document).ready(function () {
           }).then(resultado => {
             //Redireccionar
             if (resultado.value) {
-              window.location.href = 'admin-area.php';
+              window.location.href = 'lista-admin.php';
             }
           });
         } else {

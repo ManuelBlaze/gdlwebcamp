@@ -7,28 +7,25 @@
   include_once 'templates/aside.php'; 
 
 ?>
-    <!-- Main Sidebar Container -->
-    
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1 class ="text-center">Administradores</h1>
+        <h1 class ="text-center">Listado de Administradores</h1>
       </section>
 
-      <!-- Main content -->
+    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">Maneja los usuarios en esta sección</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="registros" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>Usuario</th>
@@ -37,6 +34,31 @@
                   </tr>
                   </thead>
                   <tbody>
+
+                    <?php
+                      try {
+                        $sql = "SELECT id_admin, usuario, nombre FROM admins";
+                        $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                        $error = $e->getMessage();
+                        echo $error;
+                      }
+
+                      while($admin = $resultado->fetch_assoc()) { ?>
+                        <tr>
+                          <td><?php echo $admin['usuario']; ?></td>
+                          <td><?php echo $admin['nombre']; ?></td>
+                          <td>
+                            <a href="editar-admin.php?id=<?php echo $admin['id_admin'] ?>" class="mr-2 btn-outline-warning btn margin">
+                              <i class="fas fa-pen editar"></i>
+                            </a>
+                            <a data-id="<?php echo $admin['id_admin'] ?>" data-tipo="admin" class="ml-2 btn-outline-danger btn margin borrar_registro" href="#" >
+                              <i class="fas fa-trash borrar"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      <?php }
+                    ?>
 
                   </tbody>
                   <tfoot>
