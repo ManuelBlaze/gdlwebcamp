@@ -45,7 +45,26 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (data) {
         var resultado = data;
-        console.log(resultado);
+        var estado = resultado.respuesta;
+
+        if (estado === 'exitoso') {
+          swal({
+            type: 'success',
+            title: 'Login Correcto',
+            text: 'Bienvenid@ ' + resultado.usuario
+          }).then(resultado => {
+            //Redireccionar
+            if (resultado.value) {
+              window.location.href = 'admin-area.php';
+            }
+          });
+        } else {
+          swal({
+            type: 'error',
+            title: 'Error!',
+            text: 'Usuario o contraseña incorrectos'
+          });
+        }
       }
     });
   });
