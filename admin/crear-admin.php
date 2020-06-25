@@ -38,7 +38,7 @@
                     <div class="form-group row">
                       <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                       <div class="col-sm-10">
-                        <input name="nombre" type="text" class="form-control" id="usuario" placeholder="Tu Nombre">
+                        <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Tu Nombre">
                       </div>
                     </div>
                     <div class="form-group row">
