@@ -21,7 +21,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" href="#">Ajustes</a>         
-              <a href="#" class="bg-danger dropdown-item">Cerrar Sesión</a>
+              <a href="login.php?cerrar_sesion=true" class="bg-danger dropdown-item">Cerrar Sesión</a>
           </div>
         </div>
       </ul>
