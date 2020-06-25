@@ -16,6 +16,19 @@
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
   <script src="js/sweetalert2.all.min.js"></script>
+  <?php 
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php", "", $archivo);
+
+    //Usar estilos dependiendo de la pagina
+    if ($pagina == 'lista-admin') {
+      echo '<script src="plugins/datatables/jquery.dataTables.min.js"></script>';
+      echo '<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>';
+      echo '<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>';
+      echo '<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>';
+      echo '<script src="js/app.js"></script>';
+    }
+  ?>   
   <script src="js/admin-ajax.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>

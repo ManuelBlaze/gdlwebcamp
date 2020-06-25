@@ -17,7 +17,7 @@
         <h1 class ="text-center">Crear Administrador <small>Llena el formulario para crear un Administrador</small></h1>
       </section>
 
-      <div class="row">
+      <div>
         <!-- Main content -->
         <section class="content col-md-8 mx-auto">
 
