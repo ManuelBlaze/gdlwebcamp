@@ -52,14 +52,14 @@
 
                 try {
                     if (empty($_POST['pass'])) {
-                        $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ? WHERE id_admin = ?");
+                        $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, editado = NOW() WHERE id_admin = ?");
                         $stmt->bind_param("ssi", $usuario, $nombre, $id_registro);
                     } else {
                         $opciones = array(
                             'cost' => 12
                         );
                         $pass_hashed = password_hash($pass, PASSWORD_BCRYPT, $opciones);
-                        $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, pass = ? WHERE id_admin = ?");
+                        $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, pass = ?, editado = NOW() WHERE id_admin = ?");
                         $stmt->bind_param("sssi", $usuario, $nombre, $pass_hashed, $id_registro);
                     }
                     
@@ -105,7 +105,7 @@
             $stmt->bind_param("s", $usuario);
             $stmt->execute();
 
-            $stmt->bind_result($id_admin, $usuario_admin, $nombre_admin, $pass_admin);
+            $stmt->bind_result($id_admin, $usuario_admin, $nombre_admin, $pass_admin, $editado);
             if ($stmt->affected_rows) {
                 $existe = $stmt->fetch();
                 if ($existe) {

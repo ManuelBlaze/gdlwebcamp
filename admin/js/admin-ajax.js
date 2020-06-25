@@ -51,7 +51,7 @@ $(document).ready(function () {
             swal({
               type: 'error',
               title: 'Error!',
-              text: 'Completa todos los campos'
+              text: 'Ha ocurrido un Error'
             });
             break;
         }
