@@ -5,6 +5,10 @@
     if ($cerrar_sesion) {
       session_destroy();
     }
+  } else {
+    if (isset($_SESSION['nombre'])) {
+      header('Location:admin-area.php');
+    }
   } 
   include_once 'functions/funciones.php';
   include_once 'templates/header.php';
