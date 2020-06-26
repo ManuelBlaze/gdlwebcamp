@@ -39,24 +39,19 @@
                 break;
             
             case 'actualizar':
-                $nombre = $_POST['nombre_evento'];
-                $categoria = $_POST['categoria_evento'];
-                $fech = $_POST['fecha_evento'];
-                $fecha = date('Y-m-d', strtotime($fech));
-                $hora = $_POST['hora_evento'];
-                $hora_form = date('H:i', strtotime($hora));
-                $invitado_id = $_POST['invitado'];
+                $nombre = $_POST['nombre_categoria'];
+                $icono = $_POST['icono_categoria'];
 
                 $id_registro = $_POST['id_registro'];
 
                 try {
-                    $stmt = $conn->prepare('UPDATE evento SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv = ?, editado = NOW() WHERE evento_id = ?');
-                    $stmt->bind_param("sssiii", $nombre, $fecha, $hora_form, $categoria, $invitado_id, $id_registro);
+                    $stmt = $conn->prepare('UPDATE categoria_evento SET cat_evento = ?, icono = ?, editado = NOW() WHERE id_categoria = ?');
+                    $stmt->bind_param("ssi", $nombre, $icono, $id_registro);
                     $stmt->execute();
                     
                     if ($stmt->affected_rows > 0) {
                         $respuesta = array (
-                            'respuesta' => 'correcto-evnt',
+                            'respuesta' => 'correcto-cat',
                             'id_modif' => $id_registro
                         );
                     } else {
@@ -80,7 +75,7 @@
                 $id_borrar = $_POST['id'];
 
                 try {
-                    $stmt = $conn->prepare("DELETE FROM evento WHERE evento_id = ?");
+                    $stmt = $conn->prepare("DELETE FROM categoria_evento WHERE id_categoria = ?");
                     $stmt->bind_param("i", $id_borrar);
                     $stmt->execute();
 

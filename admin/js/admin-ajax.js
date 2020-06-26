@@ -78,6 +78,19 @@ $(document).ready(function () {
             });
             break;
 
+          case 'correcto-cat':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'La categoría se modificó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-categoria.php';
+              }
+            });
+            break;
+
           case 'error-registro':
             swal({
               type: 'error',
