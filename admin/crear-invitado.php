@@ -28,24 +28,33 @@
             </div>
             <div class="card-body">
               <!-- form start -->
-                <form class="form-horizontal" method="post" action="modelo-invitado.php" name="guardar-registro" id="guardar-registro">
+                <form enctype="multipart/form-data" class="form-horizontal" method="post" action="modelo-invitado.php" name="guardar-registro" id="guardar-registro-archivo">
                   <div class="card-body">
                     <div class="form-group row">
-                      <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                      <label for="nombre_inv" class="col-sm-2 col-form-label">Nombre</label>
                       <div class="col-sm-10">
-                        <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre del invitado">
+                        <input name="nombre_inv" type="text" class="form-control" id="nombre_inv" placeholder="Nombre del invitado">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+                      <label for="apellido_inv" class="col-sm-2 col-form-label">Apellido</label>
                       <div class="col-sm-10">
-                        <input name="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido del invitado">
+                        <input name="apellido_inv" type="text" class="form-control" id="apellido_inv" placeholder="Apellido del invitado">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                      <label for="bio_inv" class="col-sm-2 col-form-label">Descripción (biografía)</label>
                       <div class="col-sm-10">
-                        <input name="pass" type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        <textarea rows= 8 name="bio_inv" class="form-control" id="bio_inv" placeholder="Descripción del invitado"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="img_inv" class="col-sm-2 col-form-label">Imagen</label>
+                      <div class="input-group col-sm-10">
+                        <div class="custom-file">
+                          <input name ="archivo_imagen" type="file" class="custom-file-input" id="img_inv">
+                          <label class="custom-file-label" for="img_inv">Elegir Archivo</label>
+                        </div>
                       </div>
                     </div>
                   </div>

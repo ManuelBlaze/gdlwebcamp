@@ -111,6 +111,123 @@ $(document).ready(function () {
     });
   });
 
+  //Cuando hay archivos
+  $('#guardar-registro-archivo').on('submit', function name(e) {
+    e.preventDefault();
+
+    var datos = new FormData(this);
+
+    $.ajax({
+      type: $(this).attr('method'),
+      data: datos,
+      url: $(this).attr('action'),
+      dataType: 'json',
+      contentType: false,
+      processData: false,
+      async: true,
+      cahce: false,
+      success: function (data) {
+        console.log(data);
+        var resultado = data;
+        switch (resultado.respuesta) {
+          case 'exito':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'El invitado: ' + resultado.nombre + ' se creó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-invitado.php';
+              }
+            });
+            break;
+
+          case 'exito-evnt':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'El evento: ' + resultado.nombre + ' se creó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-evento.php';
+              }
+            });
+            break;
+
+          case 'exito-cat':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'La Categoría: ' + resultado.nombre + ' se creó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-categoria.php';
+              }
+            });
+            break;
+
+          case 'correcto':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'El usuario se modificó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-admin.php';
+              }
+            });
+            break;
+
+          case 'correcto-evnt':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'El evento se modificó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-evento.php';
+              }
+            });
+            break;
+
+          case 'correcto-cat':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'La categoría se modificó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-categoria.php';
+              }
+            });
+            break;
+
+          case 'error-registro':
+            swal({
+              type: 'error',
+              title: 'Error!',
+              text: 'El usuario "' + resultado.user + '" ya se encuentra registrado'
+            });
+            break;
+
+          default:
+            swal({
+              type: 'error',
+              title: 'Error!',
+              text: 'Ha ocurrido un Error'
+            });
+            break;
+        }
+      }
+    });
+  });
+
   //Borrar Registro
   $('.borrar_registro').on('click', function (e) {
     e.preventDefault();
