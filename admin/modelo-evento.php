@@ -42,30 +42,17 @@
                 break;
             
             case 'actualizar':
-                $usuario = $_POST['usuario'];
-                $nombre = $_POST['nombre'];
-                $pass = $_POST['pass'];
                 $id_registro = $_POST['id_registro'];
 
                 try {
-                    if (empty($_POST['pass'])) {
-                        $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, editado = NOW() WHERE id_admin = ?");
-                        $stmt->bind_param("ssi", $usuario, $nombre, $id_registro);
-                    } else {
-                        $opciones = array(
-                            'cost' => 12
-                        );
-                        $pass_hashed = password_hash($pass, PASSWORD_BCRYPT, $opciones);
-                        $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, pass = ?, editado = NOW() WHERE id_admin = ?");
-                        $stmt->bind_param("sssi", $usuario, $nombre, $pass_hashed, $id_registro);
-                    }
-                    
+                    $stmt = $conn->prepare('UPDATE evento SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv = ? WHERE evento_id = ?');
+                    $stmt->bind_param("sssiii", $nombre, $fecha, $hora, $categoria, $invitado_id, $id_registro);
                     $stmt->execute();
-
+                    
                     if ($stmt->affected_rows > 0) {
                         $respuesta = array (
-                            'respuesta' => 'correcto',
-                            'id_actualizado' => $id_registro,
+                            'respuesta' => 'correcto-evnt',
+                            'id_modif' => $id_registro
                         );
                     } else {
                         $respuesta = array (
