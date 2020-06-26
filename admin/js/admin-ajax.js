@@ -156,40 +156,6 @@ $(document).ready(function () {
             });
             break;
 
-          case 'correcto-evnt':
-            swal({
-              type: 'success',
-              title: 'Correcto',
-              text: 'El evento se modificó correctamente'
-            }).then(resultado => {
-              //Redireccionar
-              if (resultado.value) {
-                window.location.href = 'lista-evento.php';
-              }
-            });
-            break;
-
-          case 'correcto-cat':
-            swal({
-              type: 'success',
-              title: 'Correcto',
-              text: 'La categoría se modificó correctamente'
-            }).then(resultado => {
-              //Redireccionar
-              if (resultado.value) {
-                window.location.href = 'lista-categoria.php';
-              }
-            });
-            break;
-
-          case 'error-registro':
-            swal({
-              type: 'error',
-              title: 'Error!',
-              text: 'El usuario "' + resultado.user + '" ya se encuentra registrado'
-            });
-            break;
-
           default:
             swal({
               type: 'error',
