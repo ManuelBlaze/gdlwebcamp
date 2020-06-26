@@ -26,6 +26,19 @@ $(document).ready(function () {
             });
             break;
 
+          case 'exito-evnt':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'El evento: ' + resultado.nombre + ' se creó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-evento.php';
+              }
+            });
+            break;
+
           case 'correcto':
             swal({
               type: 'success',

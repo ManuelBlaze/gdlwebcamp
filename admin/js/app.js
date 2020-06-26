@@ -5,7 +5,7 @@ $(function () {
     "pageLength": 10,
     "searching": true,
     "ordering": true,
-    "lengthChange": false,
+    "lengthChange": true,
     "language": {
       paginate: {
         next: 'Siguiente',
