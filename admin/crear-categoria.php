@@ -31,15 +31,15 @@
                 <form class="form-horizontal" method="post" action="modelo-categoria.php" name="guardar-registro" id="guardar-registro">
                   <div class="card-body">
                     <div class="form-group row">
-                      <label for="nombre_categoría" class="col-sm-3 col-form-label">Nombre Categoría</label>
+                      <label for="nombre_categoria" class="col-sm-3 col-form-label">Nombre Categoría</label>
                       <div class="col-sm-9">
-                        <input name="nombre_categoría" type="text" class="form-control" id="nombre_categoría" placeholder="Nombre de la categoría">
+                        <input name="nombre_categoria" type="text" class="form-control" id="nombre_categoria" placeholder="Nombre de la categoría">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="icono_categoria" class="col-sm-3 col-form-label">Icono Categoría</label>
                       <div class="col-sm-9">
-                        <input name="icono_categoria" type="text" class="form-control" id="icono_categoria" placeholder="fa-ejemplo-icono">
+                        <input name="icono_categoria" type="text" class="form-control" id="icono_categoria" placeholder="fa-ejemplo-icono" value="fa-">
                       </div>
                     </div>
                     <a href="https://fontawesome.com/icons?d=gallery" target="_blank">Font Awesome</a>                   

@@ -39,6 +39,19 @@ $(document).ready(function () {
             });
             break;
 
+          case 'exito-cat':
+            swal({
+              type: 'success',
+              title: 'Correcto',
+              text: 'La Categoría: ' + resultado.nombre + ' se creó correctamente'
+            }).then(resultado => {
+              //Redireccionar
+              if (resultado.value) {
+                window.location.href = 'lista-categoria.php';
+              }
+            });
+            break;
+
           case 'correcto':
             swal({
               type: 'success',
