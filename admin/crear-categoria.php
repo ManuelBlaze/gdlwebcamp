@@ -1,0 +1,67 @@
+<?php 
+  
+  include_once 'functions/sesiones.php';
+  include_once 'functions/funciones.php';
+  include_once 'templates/header.php';
+  include_once 'templates/navbar.php'; 
+  include_once 'templates/aside.php'; 
+
+?>
+    <!-- Main Sidebar Container -->
+    
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1 class ="text-center">Crear Categoría <small>Llena el formulario para crear una categoría</small></h1>
+      </section>
+
+      <div>
+        <!-- Main content -->
+        <section class="content col-md-8 mx-auto">
+
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header bg-primary">
+              <h3 class="card-title">Crear Categoría</h3>
+            </div>
+            <div class="card-body">
+              <!-- form start -->
+                <form class="form-horizontal" method="post" action="modelo-categoria.php" name="guardar-registro" id="guardar-registro">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="nombre_categoría" class="col-sm-3 col-form-label">Nombre Categoría</label>
+                      <div class="col-sm-9">
+                        <input name="nombre_categoría" type="text" class="form-control" id="nombre_categoría" placeholder="Nombre de la categoría">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="icono_categoria" class="col-sm-3 col-form-label">Icono Categoría</label>
+                      <div class="col-sm-9">
+                        <input name="icono_categoria" type="text" class="form-control" id="icono_categoria" placeholder="fa-ejemplo-icono">
+                      </div>
+                    </div>
+                    <a href="https://fontawesome.com/icons?d=gallery" target="_blank">Font Awesome</a>                   
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer bg-white">
+                    <input type="hidden" name="registro" value="nuevo">
+                    <button type="submit" class="btn btn-primary">Añadir</button>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+        </section>
+        <!-- /.content -->
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <?php 
+      include_once 'templates/footer.php'; 
+    ?>

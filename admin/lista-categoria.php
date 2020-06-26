@@ -11,7 +11,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1 class ="text-center">Listado de Eventos</h1>
+        <h1 class ="text-center">Listado de Categorías</h1>
       </section>
 
     <!-- Main content -->
@@ -21,7 +21,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Edita o borra los eventos</h3>
+                <h3 class="card-title">Edita o borra las categorías</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -29,10 +29,7 @@
                   <thead>
                   <tr>
                     <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Categoría</th>
-                    <th>Invitado</th>
+                    <th>Icono</th>
                     <th>Acciones</th>
                   </tr>
                   </thead>
@@ -40,31 +37,22 @@
 
                     <?php
                       try {
-                        $sql = "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, nombre_invitado, apellido_invitado ";
-                        $sql .= " FROM evento ";
-                        $sql .= " INNER JOIN categoria_evento ";
-                        $sql .= " ON evento.id_cat_evento = categoria_evento.id_categoria ";
-                        $sql .= " INNER JOIN invitados ";
-                        $sql .= " ON evento.id_inv = invitados.invitado_id ";
-                        $sql .= " ORDER BY evento_id ";
+                        $sql = "SELECT * FROM categoria_evento ";
                         $resultado = $conn->query($sql);
                       } catch (Exception $e) {
                         $error = $e->getMessage();
                         echo $error;
                       }
 
-                      while($evento = $resultado->fetch_assoc()) { ?>
+                      while($categoria = $resultado->fetch_assoc()) { ?>
                         <tr>
-                          <td><?php echo $evento['nombre_evento']; ?></td>
-                          <td><?php echo $evento['fecha_evento']; ?></td>
-                          <td><?php echo $evento['hora_evento']; ?></td>
-                          <td><?php echo $evento['cat_evento']; ?></td>
-                          <td><?php echo $evento['nombre_invitado']." ".$evento['apellido_invitado']; ?></td>
+                          <td><?php echo $categoria['cat_evento']; ?></td>
+                          <td><i class="fas <?php echo $categoria['icono']; ?>"></i></td>
                           <td>
-                            <a href="editar-evento.php?id=<?php echo $evento['evento_id'] ?>" class="mr-2 btn-outline-warning btn margin">
+                            <a href="editar-categoria.php?id=<?php echo $categoria['id_categoria'] ?>" class="mr-2 btn-outline-warning btn margin">
                               <i class="fas fa-pen editar"></i>
                             </a>
-                            <a data-id="<?php echo $evento['evento_id'] ?>" data-tipo="evento" class="ml-2 btn-outline-danger btn margin borrar_registro" href="#" >
+                            <a data-id="<?php echo $categoria['id_categoria'] ?>" data-tipo="categoria" class="ml-2 btn-outline-danger btn margin borrar_registro" href="#" >
                               <i class="fas fa-trash borrar"></i>
                             </a>
                           </td>
@@ -76,10 +64,7 @@
                   <tfoot>
                   <tr>
                     <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Categoría</th>
-                    <th>Invitado</th>
+                    <th>Icono</th>
                     <th>Acciones</th>
                   </tr>
                   </tfoot>
