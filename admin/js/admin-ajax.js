@@ -111,12 +111,13 @@ $(document).ready(function () {
           },
           url: 'modelo-' + tipo + '.php',
           success: function (data) {
+            console.log(data);
             var resultado = JSON.parse(data);
             if (resultado.respuesta == 'exito') {
               jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
               Swal.fire(
                 'Eliminado!',
-                'El administrador ha sido eliminado correctamente',
+                'La información ha sido borrada correctamente',
                 'success'
               )
             } else {

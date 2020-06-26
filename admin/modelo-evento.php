@@ -2,17 +2,17 @@
 
     if (isset($_POST['registro'])) {
         include_once 'functions/funciones.php';
-        $nombre = $_POST['nombre_evento'];
-        $categoria = $_POST['categoria_evento'];
-        $fech = $_POST['fecha_evento'];
-        $fecha = date('Y-m-d', strtotime($fech));
-        $hora = $_POST['hora_evento'];
-        $hora_form = date('H:i', strtotime($hora));
-        $invitado_id = $_POST['invitado'];
+        
 
         switch ($_POST['registro']) {
             case 'nuevo':
-
+                $nombre = $_POST['nombre_evento'];
+                $categoria = $_POST['categoria_evento'];
+                $fech = $_POST['fecha_evento'];
+                $fecha = date('Y-m-d', strtotime($fech));
+                $hora = $_POST['hora_evento'];
+                $hora_form = date('H:i', strtotime($hora));
+                $invitado_id = $_POST['invitado'];
                 try {
                     $stmt = $conn->prepare('INSERT INTO evento (nombre_evento, fecha_evento, hora_evento, id_cat_evento, id_inv) VALUES (?, ?, ?, ?, ?)');
                     $stmt->bind_param("sssii", $nombre, $fecha, $hora_form, $categoria, $invitado_id);
@@ -43,6 +43,14 @@
                 break;
             
             case 'actualizar':
+                $nombre = $_POST['nombre_evento'];
+                $categoria = $_POST['categoria_evento'];
+                $fech = $_POST['fecha_evento'];
+                $fecha = date('Y-m-d', strtotime($fech));
+                $hora = $_POST['hora_evento'];
+                $hora_form = date('H:i', strtotime($hora));
+                $invitado_id = $_POST['invitado'];
+
                 $id_registro = $_POST['id_registro'];
 
                 try {
@@ -76,7 +84,7 @@
                 $id_borrar = $_POST['id'];
 
                 try {
-                    $stmt = $conn->prepare("DELETE FROM admins WHERE id_admin = ?");
+                    $stmt = $conn->prepare("DELETE FROM evento WHERE evento_id = ?");
                     $stmt->bind_param("i", $id_borrar);
                     $stmt->execute();
 
