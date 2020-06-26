@@ -11,10 +11,16 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="dist/img/userblaze.jpg" class="img-circle elevation-2" alt="User Image">
+            <?php 
+              if ($_SESSION['nivel'] == 1) {
+                echo "<img src='dist/img/userblaze.jpg' class='img-circle elevation-2' alt='User Image'>";
+              } else {
+                echo "<img src='dist/img/default-150x150.png' class='img-circle elevation-2' alt='User Image'>";
+              }
+            ?>           
           </div>
           <div class="info">
-            <a href="#" class="d-block">Manuel Blaze</a>
+            <a href="#" class="d-block"><?=$_SESSION['nombre'] ?></a>
           </div>
         </div>
 
@@ -132,29 +138,33 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-user-secret"></i>
-                <p>
-                  Administradores
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="lista-admin.php" class="nav-link">
-                    <i class="fas fa-list-ul nav-icon"></i>
-                    <p>Ver Todos</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="crear-admin.php" class="nav-link">
-                    <i class="fas fa-plus nav-icon"></i>
-                    <p>Agregar</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
+
+            <?php if ($_SESSION['nivel'] == 1) { ?>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-user-secret"></i>
+                  <p>
+                    Administradores
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="lista-admin.php" class="nav-link">
+                      <i class="fas fa-list-ul nav-icon"></i>
+                      <p>Ver Todos</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="crear-admin.php" class="nav-link">
+                      <i class="fas fa-plus nav-icon"></i>
+                      <p>Agregar</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            <?php } ?>
+
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-comments"></i>
