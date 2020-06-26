@@ -49,7 +49,7 @@
                         <tr>
                           <td><?php echo $inv['nombre_invitado']." ". $inv['apellido_invitado'] ?></td>
                           <td><?php echo $inv['descripcion']; ?></td>
-                          <td><?php echo $inv['url_imagen']; ?></td>
+                          <td><img src="../img/invitados/<?=$inv['url_imagen']?>" alt="Invitado" width="100"> <?php echo $inv['url_imagen']; ?></td>
                           <td>
                             <a href="editar-invitado.php?id=<?php echo $inv['invitado_id'] ?>" class=" mb-2 btn-outline-warning btn margin">
                               <i class="fas fa-pen editar"></i>

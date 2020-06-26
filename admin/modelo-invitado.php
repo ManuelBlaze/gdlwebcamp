@@ -16,7 +16,7 @@
                 $apellido = $_POST['apellido_inv'];
                 $bio = $_POST['bio_inv'];
 
-                $directorio = "../img/";
+                $directorio = "../img/invitados/";
 
                 if (!is_dir($directorio)) {
                     mkdir($directorio, 0755, true);
@@ -62,19 +62,45 @@
                 break;
             
             case 'actualizar':
-                $nombre = $_POST['nombre_categoria'];
-                $icono = $_POST['icono_categoria'];
+                $nombre = $_POST['nombre_inv'];
+                $apellido = $_POST['apellido_inv'];
+                $bio = $_POST['bio_inv'];
+
+                $directorio = "../img/invitados/";
+
+                if (!is_dir($directorio)) {
+                    mkdir($directorio, 0755, true);
+                }
+
+                if (move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio . $_FILES['archivo_imagen']['name'])) {
+                    $imagen_url = $_FILES['archivo_imagen']['name'];
+                    $img_result = "Se subió correctamente";
+                } else {
+                    $respuesta = array (
+                        'respuesta' => error_get_last()
+                    );
+                }
 
                 $id_registro = $_POST['id_registro'];
 
                 try {
-                    $stmt = $conn->prepare('UPDATE categoria_evento SET cat_evento = ?, icono = ?, editado = NOW() WHERE id_categoria = ?');
-                    $stmt->bind_param("ssi", $nombre, $icono, $id_registro);
+                    if ($_FILES['archivo_imagen']['size'] > 0) {
+                        //Si actualiza imagen
+                        $stmt = $conn->prepare('UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ?, url_imagen = ? WHERE invitado_id = ?');
+                        $stmt->bind_param("ssssi", $nombre, $apellido, $bio, $imagen_url, $id_registro);
+                    } else {
+                        //Si la imagen no cambia
+                        $stmt = $conn->prepare('UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ? WHERE invitado_id = ?');
+                        $stmt->bind_param("sssi", $nombre, $apellido, $bio, $id_registro);
+                    }
+
                     $stmt->execute();
+
+                    $registros = $stmt->affected_rows;
                     
-                    if ($stmt->affected_rows > 0) {
+                    if ($registros > 0) {
                         $respuesta = array (
-                            'respuesta' => 'correcto-cat',
+                            'respuesta' => 'correcto',
                             'id_modif' => $id_registro
                         );
                     } else {

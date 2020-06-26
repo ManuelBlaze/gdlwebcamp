@@ -143,41 +143,15 @@ $(document).ready(function () {
             });
             break;
 
-          case 'exito-evnt':
-            swal({
-              type: 'success',
-              title: 'Correcto',
-              text: 'El evento: ' + resultado.nombre + ' se creó correctamente'
-            }).then(resultado => {
-              //Redireccionar
-              if (resultado.value) {
-                window.location.href = 'lista-evento.php';
-              }
-            });
-            break;
-
-          case 'exito-cat':
-            swal({
-              type: 'success',
-              title: 'Correcto',
-              text: 'La Categoría: ' + resultado.nombre + ' se creó correctamente'
-            }).then(resultado => {
-              //Redireccionar
-              if (resultado.value) {
-                window.location.href = 'lista-categoria.php';
-              }
-            });
-            break;
-
           case 'correcto':
             swal({
               type: 'success',
               title: 'Correcto',
-              text: 'El usuario se modificó correctamente'
+              text: 'El invitado se modificó correctamente'
             }).then(resultado => {
               //Redireccionar
               if (resultado.value) {
-                window.location.href = 'lista-admin.php';
+                window.location.href = 'lista-invitado.php';
               }
             });
             break;
