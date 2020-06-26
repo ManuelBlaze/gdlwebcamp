@@ -59,6 +59,54 @@ $(document).ready(function () {
     });
   });
 
+  //Borrar Registro
+  $('.borrar_registro').on('click', function (e) {
+    e.preventDefault();
+
+    var id = $(this).attr('data-id');
+    var tipo = $(this).attr('data-tipo');
+
+    Swal.fire({
+      title: 'Estás seguro?',
+      text: "Esta acción no se puede revertir!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#dc3545',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Si, borralo!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        $.ajax({
+          type: 'post',
+          data: {
+            'id': id,
+            'registro': 'eliminar'
+          },
+          url: 'modelo-' + tipo + '.php',
+          success: function (data) {
+            var resultado = JSON.parse(data);
+            if (resultado.respuesta == 'exito') {
+              jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
+              Swal.fire(
+                'Eliminado!',
+                'El administrador ha sido eliminado correctamente',
+                'success'
+              )
+            } else {
+              swal({
+                type: 'error',
+                title: 'Error!',
+                text: 'Ha ocurrido un Error'
+              });
+            }
+          }
+        });
+      }
+    })
+  });
+
+  //Log In
   $('#login-admin').on('submit', function name(e) {
     e.preventDefault();
 
