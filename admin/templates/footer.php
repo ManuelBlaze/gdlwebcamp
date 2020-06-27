@@ -35,8 +35,11 @@
       echo '<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>';
       echo '<script src="js/app.js"></script>';
     }
-    if ($pagina='crear-evento') {
+    if ($pagina =='crear-evento') {
       echo '<script src="js/time.js"></script>';
+    }
+    if ($pagina == 'crear-registrado') {
+      echo '<script src="../js/cotizador.js"></script>';
     }
   ?>
   <!-- Select2 -->

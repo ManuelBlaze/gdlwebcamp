@@ -130,12 +130,6 @@
                     <p>Ver Todos</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="crear-registrado.php" class="nav-link">
-                    <i class="fas fa-plus nav-icon"></i>
-                    <p>Agregar</p>
-                  </a>
-                </li>
               </ul>
             </li>
 

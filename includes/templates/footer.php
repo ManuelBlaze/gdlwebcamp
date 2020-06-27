@@ -93,9 +93,21 @@
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="js/jquery.lettering.js"></script>
-    <script src="js/Leaflet.js"></script>
+    
     <script src="js/jquery.countdown.min.js"></script>   
-    <script src="js/main.js"></script>
+    <?php 
+        if ($pagina == 'registro') {
+            echo '<script src="js/cotizador.js"></script>';
+        } else {
+            echo '<script src="js/main.js"></script>';
+        }
+        
+        if ($pagina == 'index') {
+            # code...
+            echo '<script src="js/Leaflet.js"></script>';
+        }
+    ?>
+    
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>

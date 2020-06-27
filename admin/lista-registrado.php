@@ -96,9 +96,6 @@
                           <td><?php echo $registrado['nombre_regalo']; ?></td>
                           <td>$ <?php echo $registrado['total_pagado']; ?></td>
                           <td>
-                            <a href="editar-registrado.php?id=<?php echo $registrado['id_registrado'] ?>" class="mb-2 btn-outline-warning btn margin">
-                              <i class="fas fa-pen editar"></i>
-                            </a>
                             <a data-id="<?php echo $registrado['id_registrado'] ?>" data-tipo="registrado" class=" btn-outline-danger btn margin borrar_registro" href="#" >
                               <i class="fas fa-trash borrar"></i>
                             </a>
