@@ -28,7 +28,7 @@
     $pagina = str_replace(".php", "", $archivo);
 
     //Usar estilos dependiendo de la pagina
-    if ($pagina == 'lista-admin' || $pagina == 'lista-evento' || $pagina == 'lista-invitado') {
+    if ($pagina == 'lista-admin' || $pagina == 'lista-evento' || $pagina == 'lista-invitado' || $pagina == 'lista-registrado') {
       echo '<script src="plugins/datatables/jquery.dataTables.min.js"></script>';
       echo '<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>';
       echo '<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>';
