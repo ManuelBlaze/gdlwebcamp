@@ -8,17 +8,7 @@
             </div>
             <div class="ultimos-tweets">
                 <h3>Ultimos <span>Tweets</span></h3>
-                <ul>
-                    <li>Tempore, dolore laboriosam. Earum doloremque quo perferendis, asperiores ratione consequatur
-                        omnis.
-                    </li>
-                    <li>Tempore, dolore laboriosam. Earum doloremque quo perferendis, asperiores ratione consequatur
-                        omnis.
-                    </li>
-                    <li>Tempore, dolore laboriosam. Earum doloremque quo perferendis, asperiores ratione consequatur
-                        omnis.
-                    </li>
-                </ul>
+                <a class="twitter-timeline" data-height="250" data-theme="light" href="https://twitter.com/el_bloace?ref_src=twsrc%5Etfw">Tweets by el_bloace</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="menu">
                 <h3>Redes <span>Sociales</span></h3>
@@ -104,7 +94,7 @@
         
         if ($pagina == 'index') {
             # code...
-            echo '<script src="js/Leaflet.js"></script>';
+            echo '<script src="js/main.js"></script>';
         }
     ?>
     
