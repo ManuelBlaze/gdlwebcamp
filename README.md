@@ -11,6 +11,9 @@ Proyecto de diseño Web - 2020
   <li>AJAX</li>
   <li>MYSQL</li>
  </ul>
+ <p>Template Inicial: Boilerplate</p>
+ https://html5boilerplate.com/
+ <hr>
  <p>Librerias utilizadas</p>
  <ul>
   <li>SweetAlert2</li>
