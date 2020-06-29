@@ -34,12 +34,12 @@ endif; ?>
 <?php include_once 'includes/templates/header.php'; ?>
 
 <section class="seccion contenedor">
-    <h2>Resumen Registro</h2>
+    <h2>Registro Exitoso</h2>
 
     <?php if (isset($_GET['exitoso'])):
-        if ($_GET['exitoso'] == "1") {
-            echo "Registro exitoso";
-        }
+        if ($_GET['exitoso'] == "1") { ?>
+            <a href="index.php" class="button">Volver</a>
+        <?php }
     endif; ?>    
 </section>
 

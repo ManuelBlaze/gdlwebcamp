@@ -78,7 +78,7 @@
                               $eventos_resultado = $registrado['talleres_registrados'];
                               $talleres = json_decode($eventos_resultado, true);
                               $talleres = implode("', '", $talleres['eventos']);
-                              $sql_talleres = "SELECT nombre_evento, fecha_evento, hora_evento FROM evento WHERE clave IN ('$talleres')";
+                              $sql_talleres = "SELECT nombre_evento, fecha_evento, hora_evento FROM evento WHERE evento_id IN ('$talleres')";
                               
                               // echo"<pre>";
                               //   var_dump($sql_talleres);
@@ -88,8 +88,6 @@
                               while ($eventos = $result->fetch_assoc()) {
                                 echo $eventos['nombre_evento']. " ". $eventos['fecha_evento']. " ". $eventos['hora_evento']. "<br>";
                               }
-
-                              
 
                             ?>
                           </td>
