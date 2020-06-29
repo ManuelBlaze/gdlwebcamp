@@ -89,12 +89,12 @@
         if ($pagina == 'registro') {
             echo '<script src="js/cotizador.js"></script>';
         } else {
-            echo '<script src="js/main.js"></script>';
+            echo '<script src="js/main.js"></script>'. "<br>";
         }
         
         if ($pagina == 'index') {
             # code...
-            echo '<script src="js/leaflet.js"></script>';
+            echo '<script src="js/Leaflet.js"></script>';
         }
     ?>
     
