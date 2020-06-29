@@ -94,6 +94,7 @@
         
         if ($pagina == 'index') {
             # code...
+            echo '<script src="js/leaflet.js"></script>';
             echo '<script src="js/main.js"></script>';
         }
     ?>
