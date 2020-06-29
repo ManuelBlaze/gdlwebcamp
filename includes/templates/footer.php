@@ -89,7 +89,7 @@
         if ($pagina == 'registro') {
             echo '<script src="js/cotizador.js"></script>';
         } else {
-            echo '<script src="js/main.js"></script>'. "<br>";
+            echo '<script src="js/main.js"></script>';
         }
         
         if ($pagina == 'index') {
