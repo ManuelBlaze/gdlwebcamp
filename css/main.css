@@ -1178,6 +1178,42 @@ div.dia:hover {
     margin-top: 30px;
 }
 
+/* Resumen Registro */
+
+.resumen-registro .grid-father {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    grid-gap: 1rem;
+}
+
+.resumen-registro .grid-father h3 {
+    margin: 1rem 0 0 0;
+}
+
+.resumen-registro .grid-father span {
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+@media (min-width: 768px) {
+    .resumen-registro .grid-father {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0;
+        text-align: justify;
+    }
+    .resumen-registro .grid-father .cnt {
+        text-align: center;
+    }
+}
+
+.resumen-registro .volver {
+    margin-top: 2.5rem;
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
 /* ==========================================================================
     Helper classes
    ========================================================================== */
