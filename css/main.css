@@ -1115,7 +1115,7 @@ h4 {
 }
 
 /**CALENDARIO**/
-.calendario h3{
+.calendario .dias-evento{
     background-color: #fe4918;
     clear: both;
     color: white;
@@ -1172,6 +1172,7 @@ div.dia:hover {
 
 .informacion img {
     border-radius: 1em;
+    width: 100%;
 }
 
 .informacion p {

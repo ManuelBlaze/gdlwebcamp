@@ -69,8 +69,19 @@
 
     function calcularMontos(e) {
       e.preventDefault();
-      if (regalo.value === '') {
-        alert("Debes elegir un regalo");
+      if (nombre.value === '' || apellido.value === '' || email.value === '') {
+        Swal.fire({
+          type: "error",
+          title: "Error!",
+          text: "Todos los datos personales son Obligatorios!"
+        });
+        nombre.focus();
+      } else if (regalo.value === '') {
+        Swal.fire({
+          type: "error",
+          title: "Oops...",
+          text: "Debes elegir un regalo!",
+        });
         regalo.focus();
       } else {
         let boletosDia = parseInt(pase_dia.value, 10) || 0,

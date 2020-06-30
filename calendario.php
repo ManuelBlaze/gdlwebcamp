@@ -46,7 +46,7 @@
             <?php
                 //Imprimir los eventos
                 foreach ($calendario as $dia => $lista_eventos) { ?>
-                    <h3>
+                    <h3 class="dias-evento">
                         <i class="fas fa-calendar-alt"></i>
                         <?php 
                             //unix

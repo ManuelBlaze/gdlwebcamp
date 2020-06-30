@@ -87,6 +87,7 @@
     <script src="js/jquery.countdown.min.js"></script>   
     <?php 
         if ($pagina == 'registro') {
+            echo '<script src="admin/js/sweetalert2.all.min.js"></script>';
             echo '<script src="js/cotizador.js"></script>';
         } else {
             echo '<script src="js/main.js"></script>';
